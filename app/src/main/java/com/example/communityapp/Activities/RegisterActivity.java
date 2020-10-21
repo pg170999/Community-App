@@ -66,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 regBtn.setVisibility(View.INVISIBLE);
-                loadingProgress.setVisibility(View.INVISIBLE);
+                loadingProgress.setVisibility(View.VISIBLE);
                 final String email = userEmail.getText().toString();
                 final String Name = userName.getText().toString();
                 final String Password = userPassword.getText().toString();
@@ -146,7 +146,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        
+
+        Intent homeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+
+        startActivity(homeActivity);
+        finish();
+
     }
 
     private void showMessage(String message) {
